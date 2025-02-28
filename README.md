@@ -1,0 +1,2 @@
+# AltosSpots
+Bootstrap project
