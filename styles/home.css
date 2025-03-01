@@ -10,7 +10,7 @@
     z-index: 2;
 }
 
-/* Texto Principal */
+/* TEXT */
 .home_text {
     position: relative;
     z-index: 10;
@@ -57,7 +57,7 @@
         line-height: 20px;
     }
 
-    /* Links Sociais */
+    /* SOCIAL LINKS */
    .home_social {
         left: 12px;
     }
