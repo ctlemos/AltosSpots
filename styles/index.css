@@ -18,6 +18,16 @@
     --link-active: #50C878;
 }
 
+/* PAGE TRANSITION */
+.fade {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+} 
+
+.fade.show {
+    opacity: 1;
+}
+
 a {
     /* text-decoration: none; */
     color: var(--secondary-color);
