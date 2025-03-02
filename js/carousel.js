@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     galleryImages.forEach((img, index) => {
         img.addEventListener("click", function () {
-            modalCarousel.innerHTML = ""; // Limpa o carousel do modal
+            modalCarousel.innerHTML = ""; // CLEANS THE CAROUSEL FROM THE MODAL
             
             galleryImages.forEach((image, i) => {
                 let item = document.createElement("div");
