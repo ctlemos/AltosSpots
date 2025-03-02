@@ -16,31 +16,29 @@
         <div class="container-fluid">
             <!-- <a class="navbar-brand fs-3" href="index.html">Altos Spots</a> -->
             <a class="navbar-brand" href="index.html"><img src="multimedia/images/small-logo.png" class="logo" style="filter: invert(0);"/></a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- Hamburger Menu -->
             <div class="offcanvas offcanvas-end text-bg-white" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Altos Spots</h5>
-                        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="about.html">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active fw-bold text-decoration-underline" href="contact.html">Contact</a>
-                            </li> 
-                        </ul>
-                    </div>
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Altos Spots</h5>
+                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold text-decoration-underline" href="contact.html">Contact</a>
+                        </li> 
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -49,67 +47,68 @@
     <main class="contact_container d-flex flex-column justify-content-between w-100 h-100 gap-4">
         <h3 class="text-black">Contact</h3>
     
-        <!-- CONTACTS -->
-        <div class="contact_info row">
-            <div class="col-md-8">
-                <p class="mb-3 fs-5 text-black">We are open for partnerships, colaborations and AD's.</p>
-                    
-                <div class="d-flex align-items-center gap-2 mb-2">
-                    <i class="bi bi-geo-alt-fill"></i>
-                    <span>Aveiro, Portugal</span>
+        <!-- CONTACTS, FORM, AND SOCIAL LINKS -->
+
+        <div class="row">
+            <div class="col-md-8"> 
+                <!-- CONTACT INFO -->
+                <div class="contact-info">
+                    <p class="mb-3 fs-5 text-black">We are open for partnerships, collaborations and AD's.</p>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span class="fs-5">Aveiro, Portugal</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <i class="bi bi-envelope-fill"></i>
+                        <a id="LinksEmail" href="mailto:rickyrogeradventures@gmail.com">rickyrogeradventures@gmail.com</a>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <i class="bi bi-telephone-fill"></i>
+                        <a href="https://wa.me/351915730035">+351 915 730 035</a>
+                    </div>
+                    <p class="fs-5 text-black mb-4">You can also directly send your message from here by filling the next form.</p>
                 </div>
 
-                <div class="d-flex align-items-center gap-2 mb-2">
-                    <i class="bi bi-envelope-fill"></i>
-                    <a id="LinksEmail" href="mailto:rickyrogeradventures@gmail.com">rickyrogeradventures@gmail.com</a>
+                <!-- SOCIAL LINKS: DESKTOP VERSION -->
+                <div class="social-links d-none d-md-block">
+                    <div class="d-flex">
+                        <a href="https://www.facebook.com/AltosSpots" class="custom-social-link">
+                            <img src="multimedia/images/facebook.png" alt="Facebook icon" class="img-fluid social_icon">
+                        </a>
+                        <a href="https://www.instagram.com/altos_spots/" class="custom-social-link">
+                            <img src="multimedia/images/instagram.png" alt="Instagram icon" class="img-fluid social_icon">
+                        </a>
+                        <a href="https://www.youtube.com/@AltosSpots/featured" class="custom-social-link">
+                            <img src="multimedia/images/youtube.png" alt="Youtube icon" class="img-fluid social_icon">
+                        </a>
+                    </div>
                 </div>
+            </div>
 
-                <div class="d-flex align-items-center gap-2 mb-2">
-                    <i class="bi bi-telephone-fill"></i>
-                    <a href="https://wa.me/351915730035">+351 915 730 035</a>
-                </div>
-
-                <p class="fs-5 text-black">You can also directly send your message from here by filling the next form.</p>
-
-                <p class="mt-5 text-black"><strong>Instructions on how to contact us:</strong></p>
-                <audio controls class="mb-5">
-                    <source src="multimedia/instruction.mp3" type="audio/mpeg">
-                </audio>
-            </div> 
-            
             <!-- FORM -->
             <div class="col-md-4">
                 <form method="POST" class="row g-3 needs-validation p-4 border rounded shadow-sm" novalidate id="formulario">
-                    <!-- NAME -->
                     <div class="form-floating col-md-12">
                         <input type="text" class="form-control" id="floatingName" placeholder="Nome Completo" required>
                         <label for="floatingName">Name</label>
-                        <div class="invalid-feedback">Plase insert a name.</div>
+                        <div class="invalid-feedback">Please insert a name.</div>
                     </div>
-        
-                    <!-- EMAIL -->
                     <div class="form-floating col-md-12">
                         <input type="email" class="form-control" id="floatingEmail" placeholder="email@example.com" required>
                         <label for="floatingEmail">Email</label>
-                        <div class="invalid-feedback">Plase insert a valid email.</div>
+                        <div class="invalid-feedback">Please insert a valid email.</div>
                     </div>
-        
-                    <!-- PHONE -->
                     <div class="form-floating col-md-12">
-                        <input type="phone" class="form-control" id="floatingPhone" placeholder="Phone"  required>
+                        <input type="phone" class="form-control" id="floatingPhone" placeholder="Phone" required>
                         <label for="floatingphone">Phone</label>
-                        <div class="invalid-feedback">Plase insert a phone number.</div>
+                        <div class="invalid-feedback">Please insert a phone number.</div>
                     </div>
-                        
-                    <!-- MESSAGE -->
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" style="height: 100px" required></textarea>
                         <label for="floatingTextarea2">Message</label>
                     </div>
-        
-                    <!-- CHECKBOX -->
                     <div class="col-12">
-                    <div class="form-check">
+                        <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="gridCheck" required>
                             <label class="form-check-label" for="gridCheck">
                                 I accept the terms and conditions of the AltosSpots.
@@ -117,19 +116,31 @@
                             <div class="invalid-feedback">You need to accept the terms and conditions.</div>
                         </div>
                     </div>
-        
-                    <!-- BTN -->
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary w-100">Send</button>
                     </div>
                 </form>
-            </div>    
+            </div>
         </div>
 
+        <!-- SOCIAL LINKS: MOBILE VERSION -->
+        <div class="row d-md-none py-3">
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                <a href="https://www.facebook.com/AltosSpots" class="custom-social-link">
+                    <img src="multimedia/images/facebook.png" alt="Facebook icone" class="img-fluid social_icon">
+                </a>
+                <a href="https://www.instagram.com/altos_spots/" class="custom-social-link">
+                    <img src="multimedia/images/instagram.png" alt="Instagram icone" class="img-fluid social_icon">
+                </a>
+                <a href="https://www.youtube.com/@AltosSpots/featured" class="custom-social-link">
+                    <img src="multimedia/images/youtube.png" alt="Youtube icone" class="img-fluid social_icon">
+                </a>
+            </div>
+        </div>
     </main>
             
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/formValidation.js"></script>
-<script src="js/transition.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/formValidation.js"></script>
+    <script src="js/transition.js"></script>
 </body>
 </html>
