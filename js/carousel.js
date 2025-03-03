@@ -1,27 +1,97 @@
-/* VIDEO GRID */
 const videos = [
-    { id: 1, title: "Vila de Rei (walkways and landscapes)", thumbnail: "https://img.youtube.com/vi/Hr0PFvCieT8/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=Hr0PFvCieT8" },
-    { id: 2, title: "Nature takes over", thumbnail: "https://img.youtube.com/vi/mHqGW180Ils/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=mHqGW180Ils" },
-    { id: 3, title: "Ribeira de Fráguas", thumbnail: "https://img.youtube.com/vi/6AJAvJnu7zw/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=6AJAvJnu7zw" }
+    // Latest videos
+    { id: 1, title: "Vila de Rei (walkways and landscapes)", youtubeId: "Hr0PFvCieT8" },
+    { id: 2, title: "Nature takes over", youtubeId: "mHqGW180Ils" },
+    { id: 3, title: "Ribeira de Fráguas", youtubeId: "6AJAvJnu7zw" },
+
+    // Most Popular videos
+    { id: 4, title: "Minas de Ouro Romanas", youtubeId: "d0X47nGa0e8" },
+    { id: 5, title: "Barragem da Aguieira", youtubeId: "cR5mfqB4qF4" },
+    { id: 6, title: "Pesca na Barragem da Aguieira", youtubeId: "4SfAok-OfTI" }
 ];
 
-const gridContainer = document.getElementById('grid-container');
-const carouselContainer = document.getElementById('carousel-container');
-const timelineContainer = document.getElementById('timeline-container');
+const gridContainerLatest = document.getElementById('grid-container-latest');
+const gridContainerPopular = document.getElementById('grid-container-popular');
 
-videos.forEach((video, index) => {
-    // DINAMIC GRID
-    gridContainer.innerHTML += `
-        <div class="col-md-4">
-            <a href="${video.url}" target="_blank" class="video-card d-block">
-                <img src="${video.thumbnail}" class="w-100">
+const lastestVideos = [1, 2, 3]; 
+const popularVideos = [4, 5, 6]; 
+
+// YOUTUBE IFRAME FUNCTION
+function createYouTubeIframe(youtubeId) {
+    return `
+        <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/${youtubeId}?enablejsapi=1&controls=0&autoplay=0&mute=1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        ></iframe>`;
+}
+
+// VIDEO RENDER FUNCTION (IN A GRID)
+function renderVideos(videoList, container) {
+    videoList.forEach(video => {
+        const videoCard = document.createElement('div');
+        videoCard.classList.add('col-md-4', 'video-item');
+        videoCard.innerHTML = `
+            <div class="video-card">
+                ${createYouTubeIframe(video.youtubeId)}
                 <div class="video-overlay">${video.title}</div>
-            </a>
-        </div>`;
+            </div>`;
+        container.appendChild(videoCard);
+    });
+}
+
+// RENDER VIDEOS IN "Latest" GRID
+const latest = videos.filter(video => lastestVideos.includes(video.id));
+renderVideos(latest, gridContainerLatest);
+
+// RENDER VIDEOS IN "Popular" GRID
+const popular = videos.filter(video => popularVideos.includes(video.id));
+renderVideos(popular, gridContainerPopular);
+
+// YOUTUBE API INICIALIZER
+let players = [];
+
+function onYouTubeIframeAPIReady() {
+    document.querySelectorAll('.video-item iframe').forEach((iframe, index) => {
+        const player = new YT.Player(iframe, {
+            events: {
+                'onReady': (event) => {
+                    players[index] = event.target;
+                    console.log(`Player ${index + 1} pronto: ${videos[index].title}`);
+                },
+                'onError': (event) => {
+                    console.error(`Erro no player ${index + 1}: ${videos[index].title}`);
+                }
+            }
+        });
+    });
+}
+
+// HOVER EVENT
+document.querySelectorAll('.video-item').forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+        if (players[index]) {
+            players[index].playVideo();
+        }
+    });
+
+    item.addEventListener('mouseleave', () => {
+        if (players[index]) {
+            players[index].pauseVideo();
+        }
+    });
 });
 
+// YOUTUBE API LOADER
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-/* IMG CAROUSEL */
+// IMG CAROUSEL
 document.addEventListener("DOMContentLoaded", function () {
     let modalImage = document.getElementById("modalImage");
     let galleryImages = document.querySelectorAll(".gallery-img");
