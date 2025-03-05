@@ -2,8 +2,7 @@ const videos = [
     // Latest videos
     { id: 1, title: "Vila de Rei (walkways and landscapes)", youtubeId: "Hr0PFvCieT8" },
     { id: 2, title: "Nature takes over", youtubeId: "mHqGW180Ils" },
-    { id: 3, title: "Ribeira de Fráguas", youtubeId: "6AJAvJnu7zw" },
-
+    { id: 3, title: "Ribeira de Fráguas", youtubeId: "h8vW1Txc6ns" },
     // Most Popular videos
     { id: 4, title: "Minas de Ouro Romanas", youtubeId: "d0X47nGa0e8" },
     { id: 5, title: "Barragem da Aguieira", youtubeId: "cR5mfqB4qF4" },
@@ -13,7 +12,7 @@ const videos = [
 const gridContainerLatest = document.getElementById('grid-container-latest');
 const gridContainerPopular = document.getElementById('grid-container-popular');
 
-const lastestVideos = [1, 2, 3]; 
+const latestVideos = [1, 2, 3]; 
 const popularVideos = [4, 5, 6]; 
 
 // YOUTUBE IFRAME FUNCTION
@@ -22,9 +21,9 @@ function createYouTubeIframe(youtubeId) {
         <iframe
             width="100%"
             height="315"
-            src="https://www.youtube.com/embed/${youtubeId}?enablejsapi=1&controls=0&autoplay=0&mute=1"
+            src="https://www.youtube.com/embed/${youtubeId}?enablejsapi=1&controls=1&autoplay=0&mute=1" 
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
         ></iframe>`;
 }
@@ -37,14 +36,13 @@ function renderVideos(videoList, container) {
         videoCard.innerHTML = `
             <div class="video-card">
                 ${createYouTubeIframe(video.youtubeId)}
-                <div class="video-overlay">${video.title}</div>
             </div>`;
         container.appendChild(videoCard);
     });
 }
 
 // RENDER VIDEOS IN "Latest" GRID
-const latest = videos.filter(video => lastestVideos.includes(video.id));
+const latest = videos.filter(video => latestVideos.includes(video.id));
 renderVideos(latest, gridContainerLatest);
 
 // RENDER VIDEOS IN "Popular" GRID
@@ -68,7 +66,7 @@ function onYouTubeIframeAPIReady() {
             }
         });
     });
-}
+} 
 
 // HOVER EVENT
 document.querySelectorAll('.video-item').forEach((item, index) => {
@@ -90,6 +88,8 @@ const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
 
 // IMG CAROUSEL
 document.addEventListener("DOMContentLoaded", function () {
