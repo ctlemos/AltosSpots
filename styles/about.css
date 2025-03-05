@@ -39,9 +39,11 @@
     border-radius: 10px;
     transition: transform 0.3s;
 }
+
 .video-card:hover {
     transform: scale(1.05);
 }
+
 .video-overlay {
     position: absolute;
     top: 0;
@@ -57,8 +59,14 @@
     opacity: 0;
     transition: opacity 0.3s;
 }
+
 .video-card:hover .video-overlay {
     opacity: 1;
+}
+
+#grid-container-latest .video-item {
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 
 /* IMG */
@@ -107,6 +115,17 @@
     .about_text p {
         line-height: 30px;
         margin: 40px 0 0 2px;
+    }
+    
+    /* VIDEO */
+    #grid-container-latest .video-item {
+        flex: 0 0 100%;
+        max-width: 100%; 
+    }
+
+    #grid-container-popular .video-item {
+        flex: 0 0 90%;
+        max-width: 90%; 
     }
 
     /* IMG */

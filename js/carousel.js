@@ -2,7 +2,6 @@ const videos = [
     // Latest videos
     { id: 1, title: "Vila de Rei (walkways and landscapes)", youtubeId: "Hr0PFvCieT8" },
     { id: 2, title: "Nature takes over", youtubeId: "mHqGW180Ils" },
-    { id: 3, title: "Ribeira de Fráguas", youtubeId: "h8vW1Txc6ns" },
     // Most Popular videos
     { id: 4, title: "Minas de Ouro Romanas", youtubeId: "d0X47nGa0e8" },
     { id: 5, title: "Barragem da Aguieira", youtubeId: "cR5mfqB4qF4" },
