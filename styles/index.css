@@ -57,8 +57,12 @@ h5, h3, h2, a {
 }
 
 /* SOCIAL LINKS */
+.social {
+    margin-left: 70px;
+}
+
 .custom-social-link {
-    margin-right: 50px;
+    margin-right: 90px;
     transform: scale(0.5);
     transition: 0.5s;
 }
@@ -68,14 +72,20 @@ h5, h3, h2, a {
 }
 
 .social_icon {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }
 
 
 @media screen and (max-width: 821px){
+    .social {
+        margin-left: 50px;
+    }
+    .custom-social-link {
+        margin-right: 60px;
+    }
     .social_icon {
-        width: 130px;
-        height: 130px;
+        width: 60px;
+        height: 60px;
     }
 }

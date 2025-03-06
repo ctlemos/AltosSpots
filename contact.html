@@ -49,44 +49,51 @@
     
         <!-- CONTACTS, FORM, AND SOCIAL LINKS -->
 
-        <div class="row">
-            <div class="col-md-8"> 
+        <div class="row flex-column flex-md-row">
+            <div class="col-md-8 "> 
                 <!-- CONTACT INFO -->
-                <div class="contact-info">
+                <div class="contact-info text-md-start text-center">
                     <p class="mb-3 fs-5 text-black">We are open for partnerships, collaborations and AD's.</p>
-                    <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="d-flex align-items-center gap-2 mb-2 justify-content-md-start justify-content-center">
                         <i class="bi bi-geo-alt-fill"></i>
                         <span class="fs-5">Aveiro, Portugal</span>
                     </div>
-                    <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="d-flex align-items-center gap-2 mb-3 justify-content-md-start justify-content-center">
                         <i class="bi bi-envelope-fill"></i>
                         <a id="LinksEmail" href="mailto:rickyrogeradventures@gmail.com">rickyrogeradventures@gmail.com</a>
                     </div>
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <i class="bi bi-telephone-fill"></i>
-                        <a href="https://wa.me/351915730035">+351 915 730 035</a>
-                    </div>
-                    <p class="fs-5 text-black mb-4">You can also directly send your message from here by filling the next form.</p>
+                    
+                    <p class="fs-5 text-black mb-5">You can also directly send your message from here by filling the next form.</p>
                 </div>
 
                 <!-- SOCIAL LINKS: DESKTOP VERSION -->
-                <div class="social-links d-none d-md-block">
-                    <div class="d-flex">
-                        <a href="https://www.facebook.com/AltosSpots" class="custom-social-link">
+                <div class="d-none d-lg-flex flex-row justify-content-start">
+                    <div class="col-auto mt-5"> 
+                        <a href="https://www.facebook.com/AltosSpots" class="d-inline-block custom-social-link">
                             <img src="multimedia/images/facebook.png" alt="Facebook icon" class="img-fluid social_icon">
                         </a>
-                        <a href="https://www.instagram.com/altos_spots/" class="custom-social-link">
+                    </div>
+                    <div class="col-auto mt-5">
+                        <a href="https://www.instagram.com/altos_spots/" class="d-inline-block custom-social-link">
                             <img src="multimedia/images/instagram.png" alt="Instagram icon" class="img-fluid social_icon">
                         </a>
-                        <a href="https://www.youtube.com/@AltosSpots/featured" class="custom-social-link">
+                    </div>
+                    <div class="col-auto mt-5">
+                        <a href="https://www.youtube.com/@AltosSpots/featured" class="d-inline-block custom-social-link">
                             <img src="multimedia/images/youtube.png" alt="Youtube icon" class="img-fluid social_icon">
                         </a>
                     </div>
+                    <div class="col-auto mt-5">
+                        <a href="https://www.patreon.com/profile/creators?u=17127447" class="d-inline-block custom-social-link"> 
+                            <img src="multimedia/images/patreon.png" alt="Patreon icon" class="patreon img-fluid social_icon">
+                        </a>
+                    </div>
                 </div>
+                
             </div>
 
             <!-- FORM -->
-            <div class="col-md-4">
+            <div class="col-md-8 col-lg-4 mx-auto"> 
                 <form method="POST" class="row g-3 needs-validation p-4 border rounded shadow-sm" novalidate id="formulario">
                     <div class="form-floating col-md-12">
                         <input type="text" class="form-control" id="floatingName" placeholder="Nome Completo" required>
@@ -124,17 +131,28 @@
         </div>
 
         <!-- SOCIAL LINKS: MOBILE VERSION -->
-        <div class="row d-md-none py-3">
-            <div class="col-12 d-flex justify-content-between align-items-center">
-                <a href="https://www.facebook.com/AltosSpots" class="custom-social-link">
-                    <img src="multimedia/images/facebook.png" alt="Facebook icone" class="img-fluid social_icon">
-                </a>
-                <a href="https://www.instagram.com/altos_spots/" class="custom-social-link">
-                    <img src="multimedia/images/instagram.png" alt="Instagram icone" class="img-fluid social_icon">
-                </a>
-                <a href="https://www.youtube.com/@AltosSpots/featured" class="custom-social-link">
-                    <img src="multimedia/images/youtube.png" alt="Youtube icone" class="img-fluid social_icon">
-                </a>
+        <div class="row d-lg-none">  
+            <div class="d-flex flex-row justify-content-start">
+                <div class="col-auto"> 
+                    <a href="https://www.facebook.com/AltosSpots" class="d-inline-block custom-social-link">
+                        <img src="multimedia/images/facebook.png" alt="Facebook icon" class="img-fluid social_icon">
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="https://www.instagram.com/altos_spots/" class="d-inline-block custom-social-link">
+                        <img src="multimedia/images/instagram.png" alt="Instagram icon" class="img-fluid social_icon">
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="https://www.youtube.com/@AltosSpots/featured" class="d-inline-block custom-social-link">
+                        <img src="multimedia/images/youtube.png" alt="Youtube icon" class="img-fluid social_icon">
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="https://www.patreon.com/profile/creators?u=17127447" class="d-inline-block custom-social-link"> 
+                        <img src="multimedia/images/patreon.png" alt="Patreon icon" class="patreon img-fluid social_icon">
+                    </a>
+                </div>
             </div>
         </div>
     </main>
