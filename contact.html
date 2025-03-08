@@ -49,7 +49,7 @@
     
         <!-- CONTACTS, FORM, AND SOCIAL LINKS -->
 
-        <div class="row flex-column flex-md-row">
+        < class="row flex-column flex-md-row">
             <div class="col-md-8 "> 
                 <!-- CONTACT INFO -->
                 <div class="contact-info text-md-start text-center">
@@ -97,42 +97,47 @@
             </div>
 
             <!-- FORM -->
-            <div class="col-md-8 col-lg-4 mx-auto"> 
+            <div class="col-md-8 col-lg-4 mx-auto">
                 <p class="fs-5 text-black mb-5 text-md-start text-center">You can also directly send your message from here by filling the next form.</p>
-                <form method="POST" class="row g-3 needs-validation p-4 border rounded shadow-sm" novalidate id="formulario">
+                <form method="POST" action="process_form.php" class="row g-3 needs-validation p-4 border rounded shadow-sm" novalidate id="formulario">
+                    <!-- Honeypot (protection agains spammers)-->
+                    <input type="text" name="honeypot" style="display:none;">
+        
                     <div class="form-floating col-md-12">
-                        <input type="text" class="form-control" id="floatingName" placeholder="Nome Completo" required>
+                        <input type="text" class="form-control" id="floatingName" name="name" placeholder="Name" required>
                         <label for="floatingName">Name</label>
                         <div class="invalid-feedback">Please insert a name.</div>
                     </div>
                     <div class="form-floating col-md-12">
-                        <input type="email" class="form-control" id="floatingEmail" placeholder="email@example.com" required>
+                        <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="email@example.com" required>
                         <label for="floatingEmail">Email</label>
                         <div class="invalid-feedback">Please insert a valid email.</div>
                     </div>
                     <div class="form-floating col-md-12">
-                        <input type="phone" class="form-control" id="floatingPhone" placeholder="Phone" required>
-                        <label for="floatingphone">Phone</label>
+                        <input type="tel" class="form-control" id="floatingPhone" name="phone" placeholder="Phone" required>
+                        <label for="floatingPhone">Phone</label>
                         <div class="invalid-feedback">Please insert a phone number.</div>
                     </div>
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" style="height: 100px" required></textarea>
+                        <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" name="message" style="height: 100px" required></textarea>
                         <label for="floatingTextarea2">Message</label>
                     </div>
                     <div class="col-12">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                            <input class="form-check-input" type="checkbox" id="gridCheck" name="terms" required>
                             <label class="form-check-label" for="gridCheck">
                                 I accept the terms and conditions of the AltosSpots.
                             </label>
                             <div class="invalid-feedback">You need to accept the terms and conditions.</div>
                         </div>
                     </div>
+                    <!-- Google reCAPTCHA -->
+                    <div class="g-recaptcha" data-sitekey=""></div> <!-- get a key -->
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary w-100">Send</button>
                     </div>
                 </form>
-            </div>
+            </div>    
         </div>
 
         <!-- SOCIAL LINKS: MOBILE VERSION -->
