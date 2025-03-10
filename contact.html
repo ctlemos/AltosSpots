@@ -49,7 +49,7 @@
     
         <!-- CONTACTS, FORM, AND SOCIAL LINKS -->
 
-        < class="row flex-column flex-md-row">
+        <div class="row flex-column flex-md-row">
             <div class="col-md-8 "> 
                 <!-- CONTACT INFO -->
                 <div class="contact-info text-md-start text-center">
@@ -99,7 +99,7 @@
             <!-- FORM -->
             <div class="col-md-8 col-lg-4 mx-auto">
                 <p class="fs-5 text-black mb-5 text-md-start text-center">You can also directly send your message from here by filling the next form.</p>
-                <form method="POST" action="process_form.php" class="row g-3 needs-validation p-4 border rounded shadow-sm" novalidate id="formulario">
+                <form method="POST" action="formValidation.php" class="row g-3 needs-validation p-4 border rounded shadow-sm" novalidate id="formulario">
                     <!-- Honeypot (protection agains spammers)-->
                     <input type="text" name="honeypot" style="display:none;">
         
@@ -125,8 +125,8 @@
                     <div class="col-12">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="gridCheck" name="terms" required>
-                            <label class="form-check-label" for="gridCheck">
-                                I accept the terms and conditions of the AltosSpots.
+                            <label class="form-check-label text" for="gridCheck">
+                                I accept the <span class="text-decoration-underline" data-bs-toggle="modal" data-bs-target="#formModel">Terms and Conditions</span> of the AltosSpots.
                             </label>
                             <div class="invalid-feedback">You need to accept the terms and conditions.</div>
                         </div>
@@ -138,6 +138,43 @@
                     </div>
                 </form>
             </div>    
+        </div>
+
+        
+        <!-- Modal -->
+        <div class="modal fade" id="formModel" tabindex="-1" aria-labelledby="formModelLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content text-light">
+                    <div class="modal-header bg-light">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <h1>Terms and Conditions of Use</h1>
+                        <p>Welcome to AltosSpots! By using our website, you agree to these Terms and Conditions. Please read them carefully.</p>
+                        <h2>1. Acceptance of Terms</h2>
+                        <p>By checking the box "I accept the terms and conditions," you confirm that you have read, understood, and agree to these Terms and Conditions. If you do not agree with any of the terms, please do not use our website.</p>
+                        <h2>2. Use of Data</h2>
+                        <p>We collect and use your personal data (name, email, phone, and message) solely to contact you and provide the requested services. Your data will not be shared with third parties without your explicit consent.</p>
+                        <h2>3. User Responsibilities</h2>
+                        <p>You agree to:</p>
+                        <ul>
+                            <li>Provide true and accurate information when filling out the contact form.</li>
+                            <li>Not use our website for illegal or inappropriate purposes.</li>
+                        </ul>
+                        <h2>4. Changes to the Terms</h2>
+                        <p>We reserve the right to modify these Terms and Conditions at any time. Changes will take effect immediately upon posting on the website. We recommend that you review the Terms periodically.</p>
+                        <h2>5. Jurisdiction</h2>
+                        <p>These Terms and Conditions are governed by the laws of Portugal. Any disputes related to these Terms will be resolved in the competent courts of Portugal.</p>
+                        <h2>6. Contact</h2>
+                        <p>If you have any questions about these Terms and Conditions, please contact us at: rickyrogeradventures@gmail.com.</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- SOCIAL LINKS: MOBILE VERSION -->
