@@ -49,7 +49,7 @@
         }
 
         // SENT EMAIL
-        $to = 'rickyrogeradventures@gmail.com'; 
+        $to = ''; 
         $subject = 'New Contact Form Submission';
         $email_message = "Name: $name\n";
         $email_message .= "Email: $email\n";
