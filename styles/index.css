@@ -30,7 +30,6 @@
 }
 
 a {
-    /* text-decoration: none; */
     color: var(--secondary-color);
     transition: 0.5s;
 }

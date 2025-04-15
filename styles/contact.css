@@ -46,4 +46,8 @@ span {
         margin: 20px 0;
         line-height: 30px;
     }
+
+    #LinksEmail {
+        font-size: 0.7rem;
+    }
 }

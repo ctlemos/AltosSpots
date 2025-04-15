@@ -3,25 +3,38 @@ import { images, videos } from './data.js';
 // FUNCTION TO LOAD THE IMAGES IN THE GALLERY 
 function loadImages() {
     const galleryContainer = document.getElementById('gallery-container');
-    images.forEach((image, index) => {
-        const col = document.createElement('div');
-        col.classList.add('col-12', 'col-md-6', 'col-lg-4', 'p-0');
+    galleryContainer.innerHTML = '';
 
+    images.forEach((image, index) => {
         const img = document.createElement('img');
         img.src = image.src;
         img.alt = image.alt;
-        img.classList.add('w-200', 'p-2', 'gallery-img');
+        img.classList.add('gallery-img');
         img.setAttribute('data-bs-toggle', 'modal');
         img.setAttribute('data-bs-target', '#imageModal');
         img.setAttribute('data-index', index);
 
-        col.appendChild(img);
-        galleryContainer.appendChild(col);
+        galleryContainer.appendChild(img);
     });
 
-    // Setting up the image carousel
     setupImageCarousel();
 }
+
+// GALLERY BTN
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.gallery-slider-container');
+    const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+    const scrollRightBtn = document.getElementById('scrollRightBtn');
+  
+    const scrollAmount = 300; // Adjust the scroll for click
+    scrollLeftBtn.addEventListener('click', () => {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  
+    scrollRightBtn.addEventListener('click', () => {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+});
 
 // FUNCTION TO SETTING UP THE IMAGE CAROUSEL 
 function setupImageCarousel() {
