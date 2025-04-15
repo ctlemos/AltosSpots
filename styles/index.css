@@ -77,12 +77,12 @@ h5, h3, h2, a {
 }
 
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 821px){
     .social {
         margin-left: 40px;
     }
     .custom-social-link {
-        margin-right: 50px;
+        margin-right: 30px;
     }
     .social_icon {
         width: 60px;

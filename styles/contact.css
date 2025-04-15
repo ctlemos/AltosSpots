@@ -2,6 +2,7 @@
 .contact_container {
     right: 0;
     padding: 150px;
+    overflow-x: hidden;
 }
 
 .contact_container h3 {
@@ -27,19 +28,22 @@ span {
     /* MAIN CONTENT */
     .contact_container {
         right: 0;
-        padding: 40px;
+        padding: 50px 30px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+        overflow-x: hidden;
     }
 
     .contact_container h3 {
+        text-align: center;
         font-size: 2.5em;
         margin-top: 6rem;
     }
 
     .contact_info {
-        margin: 40px 0 0 20px;
+        margin: 20px 0;
         line-height: 30px;
     }
 }

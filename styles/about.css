@@ -98,7 +98,7 @@
 @media screen and (max-width: 821px){
     /* MAIN CONTENT */
     .about_container {
-        padding: 50px;
+        padding: 50px 30px;
         text-align: center;
     }
 
