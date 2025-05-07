@@ -69,6 +69,10 @@
     max-width: 50%;
 }
 
+.btn a{
+    text-decoration: none;
+}
+
 /* IMG */
 .gallery img {
     cursor: pointer;
