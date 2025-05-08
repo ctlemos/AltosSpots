@@ -41,20 +41,21 @@
     .home_container {
         padding: 50px;
     }
-    
+   
     .home_text h2 {
-        font-size: 2.5em;
-        line-height: 1.5em;
+        width: 75vw;
+        font-size: 2.5rem;
     }
     
     .home_text h3 {
-        font-size: 2em;
+        font-size: 1.7rem;
         line-height: 1em;
     }
     
     .home_text p {
         font-size: 1em;
         line-height: 20px;
+        text-align: justify;
     }
 
     /* SOCIAL LINKS */
